@@ -1,0 +1,21 @@
+.NavBar {background-color: rgb(188, 188, 218);
+font-size: 26px;
+font-weight: bold;
+padding-top: 5px;
+padding-bottom: 5px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+li{list-style: none;
+display: inline;
+padding-right: 6vw;
+
+}
+.titulo{padding-right: 15vw;}
+a{text-decoration: none;
+    color: rgb(219, 205, 205);
+    text-shadow: 0 0 2px black; }
+.carrito{width: 4vw;}
+h1 {font-size: 40px;
+}
