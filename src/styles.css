@@ -19,3 +19,28 @@ a{text-decoration: none;
 .carrito{width: 4vw;}
 h1 {font-size: 40px;
 }
+.boton{
+    background-color: #74e9f1;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    text-shadow: 0 0 2px black; 
+}
+.compra{
+    border: none;
+    color: white;
+    padding: 9px ;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    text-shadow: 0 0 2px black; 
+border-color: rgb(138, 238, 245);
+border-width: 3px;  
+border-style: solid;
+
+}
