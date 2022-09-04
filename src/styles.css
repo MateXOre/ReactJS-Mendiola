@@ -7,10 +7,9 @@ display: flex;
 justify-content: center;
 align-items: center;
 }
-li{list-style: none;
+.nav{list-style: none;
 display: inline;
 padding-right: 6vw;
-
 }
 .titulo{padding-right: 15vw;}
 a{text-decoration: none;
@@ -42,5 +41,21 @@ h1 {font-size: 40px;
 border-color: rgb(138, 238, 245);
 border-width: 3px;  
 border-style: solid;
+}
+li{list-style: none;
+}
+.prods{list-style: none;
+    text-align: center;
+    list-style: none;
+    float: left;
+    height: auto;
+    margin: 20px;
+    background-color:rgb(201, 201, 201);
+    border-color: rgb(68, 70, 70);
+border-width: 3px;  
+border-style: solid;
+}
+ul{background-color: blue;
+
 
 }

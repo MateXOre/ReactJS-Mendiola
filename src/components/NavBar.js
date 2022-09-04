@@ -7,12 +7,12 @@ const NavBar = () => {
 
 
         <li class="titulo">El rincon</li>
-        <li ><a href='#'>Inicio</a></li>
-        <li><a href='#'>Productos</a></li>
-        <li><a href='#'>Sobre Nosotros</a></li>
-        <li><a href='#'>Contacto</a></li>
-        <li><a href='#'>Login</a></li>
-        <li><CartWidget/> </li>
+        <li class="nav"><a href='#'>Inicio</a></li>
+        <li class="nav"><a href='#'>Productos</a></li>
+        <li class="nav"><a href='#'>Sobre Nosotros</a></li>
+        <li class="nav"><a href='#'>Contacto</a></li>
+        <li class="nav"><a href='#'>Login</a></li>
+        <li class="nav"><CartWidget/> </li>
 
     </div>
   )
