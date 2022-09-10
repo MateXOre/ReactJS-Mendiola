@@ -1,25 +1,27 @@
-import React from 'react'
-import {ItemList} from './ItemList'
-import { useEffect, useState} from 'react'
-import productos from '../productos.json'
+import React from 'react';
+import {ItemList} from './ItemList';
+import { useEffect, useState} from 'react';
+import productos from '../productos.json';
 
 
 function ItemListContainer() {
   const[prods, setProds]= useState([]);
 
 
-  useEffect(() => {
-const getProd=new Promise((resolve, reject)=>{
+
+const getProd= (data, time) =>
+new Promise((resolve, reject)=>{
   setTimeout(() => {
-    if (productos.lenght) {
-      resolve(productos);
+    if (data) {
+      resolve(data);
     } else {
       reject("error");
     }
-  }, 2000);
+  }, time);
 })
 
-getProd.then((res) => {
+useEffect(() => {
+getProd(productos, 2000).then((res) => {
   setProds(res);})
   .catch((err) => console.log(err, "error al cargar productos"));
   },[]);
