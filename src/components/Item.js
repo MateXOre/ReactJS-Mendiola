@@ -1,8 +1,14 @@
 import React from 'react'
+import ItemList from './ItemList'
 
 function Item() {
+
   return (
-    <div></div>
+
+    <div>
+        <ItemList/>
+
+    </div>
   )
 }
 
