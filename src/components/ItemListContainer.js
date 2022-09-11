@@ -2,7 +2,7 @@ import React from 'react';
 import {ItemList} from './ItemList';
 import { useEffect, useState} from 'react';
 import productos from '../productos.json';
-
+import ItemCount from './ItemCount';
 
 function ItemListContainer() {
   const[prods, setProds]= useState([]);
@@ -30,6 +30,7 @@ getProd(productos, 2000).then((res) => {
     <div>
     <h1>Bienvenidos a la tienda</h1>
     <ItemList prods={prods}/>
+    <ItemCount/>
     </div>
 
   )
