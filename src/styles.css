@@ -57,3 +57,11 @@ border-style: solid;
 }
 ul{background-color: blue;
 }
+
+.img{max-width: 18vw;
+margin-top: 4vw;}
+h3{font-size: 30px;}
+.border{text-align: left;
+font-size: 20px;
+margin-left: 2vw;}
+.imgs{max-height: 20vh;}
