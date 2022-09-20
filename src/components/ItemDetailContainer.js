@@ -22,7 +22,7 @@ const ItemDetailContainer = () => {
           reject('Salio mal');
       }, 2000);
     })}
-    
+
 
 
   return (
