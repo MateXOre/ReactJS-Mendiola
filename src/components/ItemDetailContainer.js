@@ -7,6 +7,7 @@ import ItemDetail from './ItemDetail';
 const ItemDetailContainer = () => {
     const[prods, setProds]= useState([]);
     const{id} =useParams ()
+    
 
 
     useEffect(() => {
@@ -21,7 +22,7 @@ const ItemDetailContainer = () => {
           resolve(products.find(p =>p.id== id));
           reject('Salio mal');
       }, 2000);
-    })}
+    })} 
 
 
 

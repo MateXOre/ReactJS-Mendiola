@@ -1,22 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import {useState} from 'react';
 
 
-function ItemCount(){
+const ItemCount= ({cont} )=>{
     const[contador,setcounter]= useState(1)
 
-    const tocar=()=>{
-      if (contador>0)  setcounter(contador - 1)
-    }
-    const tocar2=()=>{
-      if(contador<5)  setcounter(contador+1)
-    }
 return(
 
 <div>
-<button onClick={tocar} className='boton'>Quitar</button>
-<strong className='compra'>Compras: {contador}</strong>
-<button onClick={tocar2} className='boton'>Agregar</button>
+<strong className='compra'>Compras: {cont.amount}</strong>;
+<Link to={"/cart"}>
+<strong>Terminar compra</strong>
+</Link>
 </div>
 )
 }

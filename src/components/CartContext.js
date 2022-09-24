@@ -1,30 +1,78 @@
-import { createContext, useContext, useState } from "react"
+import { createContext, useState, useContext, useEffect } from "react"; 
 import React from 'react'
 
 
-const CartContext = React.createContext([]);
+export const CartContext = createContext();
 
-const useCart=()=>{
-    return useContext(CartContext)
+export const useCart=()=>{
+  return useContext(CartContext)
 }
 
-const UseCartContext = ({children}) => {
-    const[Productos, setProductos]=useState([]);
+export const CartProvider = ({children}) => {
+    const[cartItems, setCartItems]=useState(() =>{
+        try {
+            const productosLocalStorage = localStorage.getItem('cartProducts');
+            return productosLocalStorage ? JSON.parse(productosLocalStorage) : [];
+        } catch (error) {
+            return [];
+        }
+    });
 
-    const AddProd =(Producto)=>{
-        setProductos(prevState=> prevState.concat(Producto))
+    useEffect(() => {
+        localStorage.setItem('cartProducts', JSON.stringify(cartItems));
+        console.log(cartItems);
+    }, [cartItems])
+
+    
+
+    const AddProd =(product)=>{
+        const inCart= cartItems.find(
+            (productInCart) => productInCart.id === product.id
+        );
+
+
+        if (inCart){
+            setCartItems(
+                cartItems.map((productInCart)=>{
+                    if(productInCart.id === product.id){
+                        return{...inCart, amount: inCart.amount + 1}
+                    } else return productInCart;
+                })
+            );
+        } else {
+            setCartItems([...cartItems, {...product, amount:1}])
+        }
     };
 
-    const clearProd=()=>{setProductos([])}
-    const QuitProd=(Producto)=>{
-        setProductos(prevState=> prevState.splice(Producto))
-    }
+    const clearProd=()=>{setCartItems([])
+    };
+
+    const quitProd=(product)=>{
+        const inCart= cartItems.find(
+            (productInCart) => productInCart.id === product.id
+        );
+
+        if(inCart.amount ===1 ){
+            setCartItems(
+                cartItems.filter(productInCart => productInCart.id !== product.id)
+            )
+        } else {
+            setCartItems(
+                cartItems.map((productInCart) => {
+                if(productInCart.id === product.id){
+                    return{...inCart, amount: inCart.amount -1}
+                } else {
+                    return productInCart;
+                }
+            }));
+        }
+    };
 
     const context= {
-        Productos,
+        cartItems,
         AddProd,
         clearProd,
-        QuitProd
+        quitProd
     }
   return (
       <CartContext.Provider value={context}>
@@ -32,4 +80,3 @@ const UseCartContext = ({children}) => {
       </CartContext.Provider>
   )
 }
-export {UseCartContext, useCart}

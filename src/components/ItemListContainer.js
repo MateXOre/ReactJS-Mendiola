@@ -2,7 +2,7 @@ import React from 'react';
 import {ItemList} from './ItemList';
 import { useEffect, useState} from 'react';
 import productos from '../productos.json';
-import ItemCount from './ItemCount';
+import { useCart } from './CartContext';
 
 function ItemListContainer() {
   const[prods, setProds]= useState([]);
@@ -20,6 +20,8 @@ new Promise((resolve, reject)=>{
   }, time);
 })
 
+const {Productos} = useCart() 
+
 useEffect(() => {
 getProd(productos, 2000).then((res) => {
   setProds(res);})
@@ -30,7 +32,6 @@ getProd(productos, 2000).then((res) => {
     <div>
     <h1>Bienvenidos a la tienda</h1>
     <ItemList prods={prods}/>
-    <ItemCount/>
     </div>
 
   )

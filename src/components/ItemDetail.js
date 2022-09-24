@@ -1,7 +1,9 @@
 import React from "react"
 import ItemCount from "./ItemCount"
+import {useState } from 'react';
 
 const ItemDetail = ({prods}) => {
+  const[cont, setCont]= useState([]);
 
   return (
 
@@ -13,7 +15,7 @@ const ItemDetail = ({prods}) => {
       <li>Id: {prods.id}</li>
       <li>Categoria: {prods.categoria}</li>
       <span>Descripcion: {prods.info}</span>
-      <ItemCount/>
+      <ItemCount cont={cont}/> 
       </div>
 
     </div>
