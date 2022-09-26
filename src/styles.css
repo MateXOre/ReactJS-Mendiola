@@ -15,7 +15,6 @@ padding-right: 6vw;
 a{text-decoration: none;
     color: rgb(219, 205, 205);
     text-shadow: 0 0 2px black; }
-.carrito{width: 4vw;}
 h1 {font-size: 40px;
 }
 .boton{
@@ -74,4 +73,20 @@ margin-left: 2vw;}
   }
   .itemButton:hover {
     background-color: #cecece;
+  }
+  .carrito{width: 4vw;
+display: flex;
+justify-content: flex-end;}
+
+  .cartNumber{
+      top: 0;
+      right: 0;
+      height: 25px;
+      width: 25px;
+      font-size: 18px;
+      border-radius: 100px;
+      background-color: rgb(0, 0, 0);
+      display: flex;
+      justify-content: center;
+      align-items: center;
   }

@@ -11,14 +11,15 @@ import Cart from './components/cart';
 
 
 
+
 function App() {
   
 
   return (
     <div className="App">
         {<BrowserRouter>
-          <NavBar/>
           <CartProvider>
+          <NavBar/>
           <Routes>
             <Route path='/' element={<ItemListContainer/>}/>
             <Route path='/ItemDetail' element={<ItemDetail/>}/>
@@ -26,7 +27,6 @@ function App() {
             <Route path='/cart' element={<Cart/>}/>
           </Routes>
           </CartProvider>
-
          </BrowserRouter>}
       
 </div>

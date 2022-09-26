@@ -6,7 +6,6 @@ import products from "../Products";
 
 
 
-
 export const ItemList = ({prods}) =>{ 
 
 
